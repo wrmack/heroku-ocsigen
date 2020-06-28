@@ -1,0 +1,57 @@
+<ocsigen>
+    <server>
+
+        <port>${PORT}</port>
+
+        <logdir>/home/opam/.opam/default/lib/ocsigenserver/var/log/ocsigenserver</logdir>
+        <datadir>/home/opam/.opam/default/lib/ocsigenserver/var/lib/ocsigenserver</datadir>
+        <user>${USER}</user>
+        <group>${GROUP}</group>
+        <!-- <commandpipe>/home/opam/.opam/default/lib/ocsigenserver/var/run/ocsigenserver_command</commandpipe> -->
+        <!-- <mimefile>/home/opam/.opam/default/lib/ocsigenserver/etc/ocsigenserver/mime.types</mimefile> -->
+
+        <charset>utf-8</charset>
+        <findlib path="/home/opam/.opam/default/lib"/>
+        <extension findlib-package="ocsigenserver.ext.staticmod"/>
+
+        <!--
+        <findlib path="/home/opam/.opam/default/lib"/>
+        <extension findlib-package="ocsigenserver.ext.ocsipersist-sqlite">
+        <database file="/home/opam/.opam/default/lib/ocsigenserver/var/lib/ocsigenserver/ocsidb"/>
+        </extension>
+        -->
+
+        <!--
+        <findlib path="/home/opam/.opam/default/lib"/>
+        <extension findlib-package="ocsigenserver.ext.ocsipersist-pgsql">
+            <database
+                host="localhost"
+                port="3000"
+                user="opam"
+                password="pw"
+                database="db"
+                unix_domain_socket_dir="./udsd"
+            />
+        </extension>
+        -->
+
+        <!-- You may want to use DBM instead of SQLite (if compiled). -->
+
+        <extension findlib-package="ocsigenserver.ext.ocsipersist-dbm">
+            <store dir="/home/opam/.opam/default/lib/ocsigenserver/var/lib/ocsigenserver"/>
+            <ocsidbm name="/home/opam/.opam/default/lib/ocsigenserver/extensions/ocsidbm"/>
+        </extension>
+
+        <!-- Inclusion of all external configuration files matching *.conf
+            from the directory 'dir' (in alphabetical order): -->
+        <extconf dir="/home/opam/.opam/default/lib/ocsigenserver/etc/ocsigenserver/conf.d" />
+
+        <host charset="utf-8" hostfilter="*">
+            <site path="ocsigenstuff" charset="utf-8">
+                <static dir="/home/opam/ocsigen/www/" />
+            </site>
+            <static dir="/home/opam/ocsigen/www/" />
+        </host>
+
+    </server>
+</ocsigen>
