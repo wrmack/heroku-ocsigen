@@ -25,7 +25,7 @@ RUN sudo apt-get update && sudo apt-get install --no-install-recommends -y \
 
 # Initialise opam and install ocaml and ocsigen, answering all prompts with yes
 # Disable sandboxing per https://github.com/ocaml/opam/issues/3498, https://github.com/ocaml/opam/issues/3424 
-# Write opam env to bashrc
+# Write "opam env" to bashrc (which is not read until container starts so need to add paths to ENV while building image)
 # If need to reinitialise opam, use --reinit as in: RUN opam init --disable-sandboxing --reinit -y
 USER opam
 ENV PATH='/home/opam/.opam/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
