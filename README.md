@@ -6,15 +6,16 @@ It runs the bare ocsigenserver.  Image size is 1.35GB.
 
 ## To deploy to Heroku
 
-#### At start of your session
+#### Create a Heroku app
 ```
 cd to directory with this Dockerfile
 heroku login
 heroku container:login
+heroku create *your-app-name*
 ```
 #### Each time you make changes, push to Heroku and release
 ```
-heroku create *your-app-name*
+
 heroku container:push web --app *your-app-name*
 heroku container:release web --app *your-app-name*
 ```
