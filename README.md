@@ -44,7 +44,7 @@ docker run -it -d --name *your-container-name* -p 8080:8080 *your-image-name*
 - view on localhost:8080
 
 
-Live site [here](https://ocsi-app4.herokuapp.com).  I am using the free tier so it takes a while to wake up a dyno if it is sleeping.
+Live site [here](https://ocsi-app4.herokuapp.com).  I am using the free tier so it takes a while (about 1 minute) to wake up a dyno if it is sleeping.  Not sure what happens under the hood.  Heroku possibly creates a new instance and so the whole image has to be copied.
 
 
 
