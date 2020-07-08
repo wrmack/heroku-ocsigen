@@ -4,6 +4,8 @@ This is a Dockerfile for deploying the Ocaml [ocsigenserver](https://ocsigen.org
 
 It runs the bare ocsigenserver.  Image size is 1.35GB.
 
+**The image built contains the full Ocaml installation.  Please see [heroku-ocsigen-thin](https://github.com/wrmack/heroku-ocsigen-thin) or [heroku-ocsigen-start-thin](https://github.com/wrmack/heroku-ocsigen-start-thin/tree/master) for a Dockerfile that creates a much smaller image.**
+
 ## To deploy to Heroku
 
 #### Create a Heroku app
